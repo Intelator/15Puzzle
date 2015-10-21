@@ -1,4 +1,4 @@
-package puzzle_core;
+package puzzle.core;
 
 import java.util.ArrayList;
 
