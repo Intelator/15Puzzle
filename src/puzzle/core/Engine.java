@@ -7,11 +7,12 @@ import java.util.List;
  */
 public interface Engine {
     List<Integer> fields = null;
+    int quantity = 0;
 
-    public void createField(int quantity);
-    public boolean hasSolvation(List<Integer> fields);
-    public boolean isFinished(List<Integer> fields);
+    public void createField();
+    //TODO public boolean hasSolvation(List<Integer> fields);
+    public boolean isFinished();
     public void moveTile(int direction);
     public List<Integer> getValues();
-
+    public void setQuantity(int quantity);
 }
