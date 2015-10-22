@@ -25,11 +25,11 @@ public class EngineImpl implements Engine {
 
         int i = 0;
         while (i < quantity) {
-            int j = (int) (Math.random() * (quantity +1));
+            int j = (int) (Math.random() * (quantity));
 
-            if ((j == 0) || !(tempList.get(j) == 0)) {
+            if (!(tempList.get(j) == -1)) {
                 fields.add(i,j);
-                tempList.set(j, 0);
+                tempList.set(j, -1);
                 i++;
             }
         }

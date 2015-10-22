@@ -9,10 +9,10 @@ public interface Engine {
     List<Integer> fields = null;
     int quantity = 0;
 
-    public void createField();
+    void createField();
     //TODO public boolean hasSolvation(List<Integer> fields);
-    public boolean isFinished();
-    public void moveTile(int direction);
-    public List<Integer> getValues();
-    public void setQuantity(int quantity);
+    boolean isFinished();
+    void moveTile(int direction);
+    List<Integer> getValues();
+    void setQuantity(int quantity);
 }
