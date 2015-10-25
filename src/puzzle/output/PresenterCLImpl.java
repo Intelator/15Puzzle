@@ -1,11 +1,14 @@
 package puzzle.output;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by User on 22.10.2015.
  */
 public class PresenterCLImpl implements Presenter {
+    private static Logger log = Logger.getLogger(PresenterCLImpl.class.getName());
+
     public void clearField() {
         //TODO: Find solution
     }

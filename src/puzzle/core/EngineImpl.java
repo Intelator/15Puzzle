@@ -3,11 +3,14 @@ package puzzle.core;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Logger;
 
 /**
  * Created by User on 21.10.2015.
  */
 public class EngineImpl implements Engine {
+    private static Logger log = Logger.getLogger(EngineImpl.class.getName());
+
     private List<Integer> fields = new ArrayList<Integer>();
     private int quantity;
 

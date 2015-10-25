@@ -1,11 +1,13 @@
 package puzzle.core;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by User on 21.10.2015.
  */
 public interface Engine {
+    static Logger log = null;
     List<Integer> fields = null;
     int quantity = 0;
 
