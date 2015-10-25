@@ -8,11 +8,11 @@ import java.util.logging.Logger;
 /**
  * Created by User on 21.10.2015.
  */
-public class EngineExt extends Engine {
+public class EngineImpl extends Engine {
     private List<Integer> fields = new ArrayList<Integer>();
     private int quantity;
 
-    public EngineExt() {
+    public EngineImpl() {
         super();
     }
 

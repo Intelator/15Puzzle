@@ -1,16 +1,16 @@
 package com.company;
 
 import puzzle.core.Engine;
-import puzzle.core.EngineExt;
+import puzzle.core.EngineImpl;
 import puzzle.output.Presenter;
-import puzzle.output.PresenterCLExt;
+import puzzle.output.PresenterCLImpl;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        Engine engine = new EngineExt();
-        Presenter presenter = new PresenterCLExt();
+        Engine engine = new EngineImpl();
+        Presenter presenter = new PresenterCLImpl();
 
         engine.setQuantity(16);
         engine.createField();

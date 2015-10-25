@@ -6,8 +6,8 @@ import java.util.logging.Logger;
 /**
  * Created by User on 22.10.2015.
  */
-public class PresenterCLExt extends Presenter {
-    public PresenterCLExt() {
+public class PresenterCLImpl extends Presenter {
+    public PresenterCLImpl() {
         super();
     }
 
