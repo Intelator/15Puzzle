@@ -10,6 +10,9 @@ public class PresenterSwing extends Presenter {
     public PresenterSwing() {
         super();
         JFrame frame = new JFrame("15Puzzle");
+        frame.setSize(640, 480);
+        frame.setVisible(true);
+        log.info("Frame created.");
     }
 
     @Override

@@ -14,7 +14,7 @@ public abstract class Presenter {
 
     Presenter() {
         try {
-            FileHandler fh = new FileHandler("D:\\log.txt");
+            FileHandler fh = new FileHandler("D:\\log\\log.txt");
             log.addHandler(fh);
 
         } catch (SecurityException e) {
