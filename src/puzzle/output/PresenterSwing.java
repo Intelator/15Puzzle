@@ -12,20 +12,24 @@ import java.util.List;
 public class PresenterSwing extends Presenter {
     JFrame frame = null;
     Painter painter = null;
-    Graphics g = null;
 
     public PresenterSwing(List fields) {
         super();
         painter = new Painter(fields);
+        painter.setBounds(0, 0, 100, 100);
         frame = new JFrame("15Puzzle");
-        frame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-        g = frame.getGraphics();
-        frame.pack();
+//        frame.addWindowListener(new WindowAdapter() {
+//            public void windowClosing(WindowEvent e) {
+//                System.exit(0);
+//            }
+//        });
+        frame.setSize(400, 400);
+        frame.getContentPane().setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(painter);
+        //frame.pack();
         frame.setVisible(true);
+        drawField(fields);
         log.info("Frame created.");
     }
 
@@ -36,7 +40,7 @@ public class PresenterSwing extends Presenter {
 
     @Override
     public void drawField(List<Integer> fields) {
-        painter.paintComponent(g);
+        painter.repaint();
     }
 
 }

@@ -16,6 +16,6 @@ public class Main {
 
         engine.setQuantity(16);
         engine.createField();
-        presenter.drawField(engine.getValues());
+        //presenter.drawField(engine.getValues());
     }
 }
