@@ -12,18 +12,20 @@ import java.util.List;
 public class PresenterSwing extends Presenter {
     JFrame frame = null;
     Painter painter = null;
+    private int frameWidth = 400;
+    private int frameHeight = 400;
 
     public PresenterSwing(List fields) {
         super();
-        painter = new Painter(fields);
-        painter.setBounds(0, 0, 100, 100);
+        painter = new Painter(fields, frameWidth, frameHeight);
+        painter.setBounds(0, 0, frameWidth, frameHeight);
         frame = new JFrame("15Puzzle");
 //        frame.addWindowListener(new WindowAdapter() {
 //            public void windowClosing(WindowEvent e) {
 //                System.exit(0);
 //            }
 //        });
-        frame.setSize(400, 400);
+        frame.setSize(frameWidth, frameHeight);
         frame.getContentPane().setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(painter);
