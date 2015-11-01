@@ -1,0 +1,35 @@
+           <project name="09.jarprops" default="all" >
+
+                 <property file="Ant.properties"/>
+                 <property name="build.dir" value="build"/>
+                 <property name="class.dir" value="${build.dir}/class"/>
+                 <property name="stuff.jar" value="${build.dir}/stuff.jar"/>
+
+                 <target name="make.dirs" description="Make some dirs">
+                         <mkdir dir="${build.dir}"/>
+                         <mkdir dir="${class.dir}"/>
+                 </target>
+
+                 <target name="compile" description="compile java" depends="make.dirs">
+                         <javac destdir="${class.dir}">
+                                 <src path="src"/>
+                         </javac>
+                 </target>
+
+                 <target name="stuff.jar" description="make jar file" depends="compile">
+                         <jar destfile="${stuff.jar}">
+                                 <fileset dir="${class.dir}">
+                                        <include name="**/*.class"/>
+                                        <exclude name="**/CVS"/>
+                             </fileset>
+                         </jar>
+                 </target>
+
+                 <target name="all" description="Do the build" depends="stuff.jar"/>
+
+                 <target name="clean" description="clean up">
+                         <echo>I'm cleaning up.</echo>
+                         <delete dir="${build.dir}"/>
+                 </target>
+
+           </project>

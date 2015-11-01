@@ -19,7 +19,7 @@ public abstract class Presenter {
 
         } catch (SecurityException e) {
             log.log(Level.SEVERE,
-                    "Cannot create file becouse of security policy.",
+                    "Cannot create file because of security policy.",
                     e);
         } catch (IOException e) {
             log.log(Level.SEVERE,
