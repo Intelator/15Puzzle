@@ -14,12 +14,12 @@ public abstract class Presenter {
 
     Presenter() {
         try {
-            FileHandler fh = new FileHandler("D:\\log\\log.txt");
+            FileHandler fh = new FileHandler("D:\\log\\log.txt"); //TODO Needs to fix IOExp
             log.addHandler(fh);
 
         } catch (SecurityException e) {
             log.log(Level.SEVERE,
-                    "Cannot create file becouse of security policy.",
+                    "Cannot create file because of security policy.",
                     e);
         } catch (IOException e) {
             log.log(Level.SEVERE,

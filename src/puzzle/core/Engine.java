@@ -16,7 +16,7 @@ public abstract class Engine {
 
     Engine() {
         try {
-            FileHandler fh = new FileHandler("D:\\log\\log.txt");
+            FileHandler fh = new FileHandler("D:\\log\\log.txt"); //TODO Needs to fix IOExp
             log.addHandler(fh);
 
         } catch (SecurityException e) {
