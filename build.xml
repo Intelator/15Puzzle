@@ -18,10 +18,13 @@
 
                  <target name="stuff.jar" description="make jar file" depends="compile">
                          <jar destfile="${stuff.jar}">
-                                 <fileset dir="${class.dir}">
-                                        <include name="**/*.class"/>
-                                        <exclude name="**/CVS"/>
+                             <fileset dir="${class.dir}">
+                                 <include name="**/*.class"/>
+                                 <exclude name="**/CVS"/>
                              </fileset>
+                             <manifest>
+                                 <attribute name="Main-Class" value="org.main.Main"/>
+                             </manifest>
                          </jar>
                  </target>
 
