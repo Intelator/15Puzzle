@@ -11,11 +11,13 @@ public class Main {
 
     public static void main(String[] args) {
         Engine engine = new EngineImpl();
-        //Presenter presenter = new PresenterCLImpl();
-        Presenter presenter = new PresenterSwing(engine.getValues());
-
         engine.setQuantity(16);
         engine.createField();
+        //Presenter presenter = new PresenterCLImpl();
+
+        Presenter presenter = new PresenterSwing(engine.getValues());
+
+
         //presenter.drawField(engine.getValues());
     }
 }
