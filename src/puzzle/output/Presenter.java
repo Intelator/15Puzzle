@@ -14,7 +14,7 @@ public abstract class Presenter {
 
     Presenter() {
         try {
-            FileHandler fh = new FileHandler("D:\\log\\log.txt"); //TODO Needs to fix IOExp
+            FileHandler fh = new FileHandler("%t/history.log");
             log.addHandler(fh);
 
         } catch (SecurityException e) {

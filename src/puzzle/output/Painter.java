@@ -2,7 +2,11 @@ package puzzle.output;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by User on 29.10.2015.
@@ -12,7 +16,23 @@ public class Painter extends JPanel {
     private int frameWidth = 0;
     private int frameHeight = 0;
 
+    static Logger log = Logger.getLogger(Presenter.class.getName());
+
     Painter(List fields, int frameWidth, int frameHeight) {
+        try {
+            FileHandler fh = new FileHandler("%t/history.log");
+            log.addHandler(fh);
+
+        } catch (SecurityException e) {
+            log.log(Level.SEVERE,
+                    "Cannot create file because of security policy.",
+                    e);
+        } catch (IOException e) {
+            log.log(Level.SEVERE,
+                    "Cannot create file because of IOException.",
+                    e);
+        }
+
         this.fields = fields;
         this.frameWidth = frameWidth;
         this.frameHeight = frameHeight;

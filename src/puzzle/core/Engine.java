@@ -16,12 +16,12 @@ public abstract class Engine {
 
     Engine() {
         try {
-            FileHandler fh = new FileHandler("D:\\log\\log.txt"); //TODO Needs to fix IOExp
+            FileHandler fh = new FileHandler("%t/history.log");
             log.addHandler(fh);
 
         } catch (SecurityException e) {
             log.log(Level.SEVERE,
-                    "Cannot create file becouse of security policy.",
+                    "Cannot create file because of security policy.",
                     e);
         } catch (IOException e) {
             log.log(Level.SEVERE,
