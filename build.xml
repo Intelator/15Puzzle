@@ -1,11 +1,15 @@
-           <project name="09.jarprops" default="all" >
+           <project name="09.jarprops" default="all" xmlns:ivy="antlib:org.apache.ivy.ant">
 
                  <property file="Ant.properties"/>
                  <property name="build.dir" value="build"/>
                  <property name="class.dir" value="${build.dir}/class"/>
                  <property name="stuff.jar" value="${build.dir}/stuff.jar"/>
 
-                 <target name="make.dirs" description="Make some dirs">
+                <target name="resolve" description="--> resolve and retrieve dependencies with ivy">
+                   <ivy:retrieve />
+                </target>
+
+                 <target name="make.dirs" description="Make some dirs" depends="resolve">
                          <mkdir dir="${build.dir}"/>
                          <mkdir dir="${class.dir}"/>
                  </target>

@@ -1,0 +1,6 @@
+<ivy-module version="1.0">
+    <info organisation="org.main" module="15Puzzle"/>
+    <dependencies>
+        <dependency org="org.springframework" name="spring-context" rev="4.1.7.RELEASE"/>
+    </dependencies>
+</ivy-module>
