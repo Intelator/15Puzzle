@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  * Created by User on 29.10.2015.
  */
 public class Painter extends JPanel {
-    private List fields = null;
+    private List<Integer> fields = null;
     private int frameWidth = 0;
     private int frameHeight = 0;
 
