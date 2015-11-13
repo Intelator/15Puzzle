@@ -57,7 +57,7 @@ public class Painter extends JPanel {
         int distanceVer = (int) startVer/2;
         int distanceHor = (int) startHor/2;
 
-        int tileHeigth = (int) ((frameHeight - startVer * 4  - distanceVer * (tilesInLine - 1))/tilesInLine * 0.95);
+        int tileHeight = (int) ((frameHeight - startVer * 4  - distanceVer * (tilesInLine - 1))/tilesInLine * 0.95);
         int tileWidth = (int) ((frameWidth - startHor * 4 - distanceHor * (tilesInLine - 1))/tilesInLine);
 
         int k = 0;
@@ -65,11 +65,11 @@ public class Painter extends JPanel {
             int curStartHor = (int) frameWidth/tilesInLine/10;
             for (int j = 0; j < tilesInLine; j++) {
                 int value = (int) fields.get(k);
-                drawTile(curStartHor, startVer, tileWidth, tileHeigth, value, g2d);
+                drawTile(curStartHor, startVer, tileWidth, tileHeight, value, g2d);
                 curStartHor += tileWidth + distanceHor;
                 k++;
             }
-            startVer += tileHeigth + distanceVer;
+            startVer += tileHeight + distanceVer;
         }
 
     }

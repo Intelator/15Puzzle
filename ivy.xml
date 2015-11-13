@@ -1,6 +1,7 @@
 <ivy-module version="1.0">
     <info organisation="org.main" module="15Puzzle"/>
     <dependencies>
-        <dependency org="org.springframework" name="spring-context" rev="4.1.7.RELEASE"/>
+        <dependency org="org.springframework" name="spring-context" rev="4.2.2.RELEASE"/>
+        <dependency org="commons-logging" name="commons-logging" rev="1.2"/>
     </dependencies>
 </ivy-module>

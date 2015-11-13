@@ -31,7 +31,7 @@ public abstract class Engine {
     }
 
     public abstract void createField();
-    //TODO public boolean hasSolvation(List<Integer> fields);
+    //TODO public boolean hasSolution(List<Integer> fields);
     public abstract boolean isFinished();
     public abstract void moveTile(int direction);
     public abstract List<Integer> getValues();

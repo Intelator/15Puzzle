@@ -11,6 +11,10 @@ public class PresenterCLImpl extends Presenter {
         super();
     }
 
+    public void createField(List fields) {
+        //
+    }
+
     public void clearField() {
         //TODO: Find solution
     }

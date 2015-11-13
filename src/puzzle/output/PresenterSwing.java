@@ -15,8 +15,11 @@ public class PresenterSwing extends Presenter {
     private int frameWidth = 400;
     private int frameHeight = 400;
 
-    public PresenterSwing(List fields) {
+    public PresenterSwing() {
         super();
+    }
+
+    public void createField (List fields) {
         painter = new Painter(fields, frameWidth, frameHeight);
         painter.setBounds(0, 0, frameWidth, frameHeight);
         frame = new JFrame("15Puzzle");
