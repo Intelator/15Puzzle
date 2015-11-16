@@ -1,14 +1,9 @@
 package org.main;
 
-import javafx.application.Application;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import puzzle.core.Engine;
-import puzzle.core.EngineImpl;
+import puzzle.core.FieldProcessor;
 import puzzle.output.Presenter;
-import puzzle.output.PresenterCLImpl;
-import puzzle.output.PresenterSwing;
-import org.apache.commons.logging.LogFactory;
 
 public class Main {
 
@@ -16,13 +11,13 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-        Engine engine = (Engine) context.getBean("engine");
+        FieldProcessor fieldProcessor = (FieldProcessor) context.getBean("fieldProcessor");
 
-        engine.setQuantity(16);
-        engine.createField();
+        fieldProcessor.setQuantity(16);
+        fieldProcessor.createField();
 
         Presenter presenter = (Presenter) context.getBean("presenter");
-        presenter.createField(engine.getValues());
+        presenter.createField(fieldProcessor.getValues());
 
 
     }

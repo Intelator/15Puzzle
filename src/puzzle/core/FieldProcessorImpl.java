@@ -2,17 +2,15 @@ package puzzle.core;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.logging.Logger;
 
 /**
  * Created by User on 21.10.2015.
  */
-public class EngineImpl extends Engine {
+public class FieldProcessorImpl extends FieldProcessor {
     private List<Integer> fields = new ArrayList<Integer>();
     private int quantity;
 
-    public EngineImpl() {
+    public FieldProcessorImpl() {
         super();
     }
 

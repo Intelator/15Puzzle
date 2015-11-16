@@ -9,12 +9,12 @@ import java.util.logging.Logger;
 /**
  * Created by User on 21.10.2015.
  */
-public abstract class Engine {
-    static Logger log = Logger.getLogger(Engine.class.getName());
+public abstract class FieldProcessor {
+    static Logger log = Logger.getLogger(FieldProcessor.class.getName());
     List<Integer> fields = null;
     int quantity = 0;
 
-    Engine() {
+    FieldProcessor() {
         try {
             FileHandler fh = new FileHandler("%t/history.log");
             log.addHandler(fh);
