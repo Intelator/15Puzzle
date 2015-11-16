@@ -7,7 +7,7 @@
 
     <bean id="fieldProcessor" class="puzzle.core.FieldProcessorImpl"/>
     <bean id="presenter" class="puzzle.output.PresenterSwingImpl"/>
-    <bean id="helper" class="org.main.MainHelper" scope="singleton"/>
+    <bean id="helper" class="org.main.MainHelper"/>//TODO: create links between beans 
     <bean id="main" class="org.main.Main"/>
 
 </beans>

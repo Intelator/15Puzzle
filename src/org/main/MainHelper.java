@@ -20,10 +20,12 @@ public class MainHelper {
         this.context = context;
     }
 
+    @Deprecated
     public void setPresenter() {
         this.presenter = (Presenter) context.getBean("presenter");
     }
 
+    @Deprecated
     public void setFieldProcessor() {
         this.fieldProcessor = (FieldProcessor) context.getBean("fieldProcessor");
     }
