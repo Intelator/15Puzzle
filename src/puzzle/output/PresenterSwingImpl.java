@@ -9,13 +9,13 @@ import java.util.List;
 /**
  * Created by User on 27.10.2015.
  */
-public class PresenterSwing extends Presenter {
+public class PresenterSwingImpl extends Presenter {
     JFrame frame = null;
     Painter painter = null;
     private int frameWidth = 400;
     private int frameHeight = 400;
 
-    public PresenterSwing() {
+    public PresenterSwingImpl() {
         super();
     }
 

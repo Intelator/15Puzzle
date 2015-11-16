@@ -6,6 +6,8 @@
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="fieldProcessor" class="puzzle.core.FieldProcessorImpl"/>
-    <bean id="presenter" class="puzzle.output.PresenterSwing"/>
+    <bean id="presenter" class="puzzle.output.PresenterSwingImpl"/>
+    <bean id="helper" class="org.main.MainHelper" scope="singleton"/>
+    <bean id="main" class="org.main.Main"/>
 
 </beans>

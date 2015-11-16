@@ -7,18 +7,17 @@ import puzzle.output.Presenter;
 
 public class Main {
 
+    public static ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-        FieldProcessor fieldProcessor = (FieldProcessor) context.getBean("fieldProcessor");
+        MainHelper helper = (MainHelper) context.getBean("helper");
+        helper.setContext(context);
+        helper.initialisation();
 
-        fieldProcessor.setQuantity(16);
-        fieldProcessor.createField();
+        /*while (!(helper.getState().equals(GameStates.FINISH))) {
 
-        Presenter presenter = (Presenter) context.getBean("presenter");
-        presenter.createField(fieldProcessor.getValues());
-
+        }*/
 
     }
 }
