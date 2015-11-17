@@ -12,7 +12,6 @@ public class Main {
     public static void main(String[] args) {
 
         MainHelper helper = (MainHelper) context.getBean("helper");
-        helper.setContext(context);
         helper.initialisation();
 
         /*while (!(helper.getState().equals(GameStates.FINISH))) {

@@ -11,14 +11,9 @@ import puzzle.output.Presenter;
  */
 public class MainHelper {
 
-    private ApplicationContext context;
     private GameStates state = null;
     private FieldProcessor fieldProcessor = null;
     private Presenter presenter = null;
-
-    public void setContext (ApplicationContext context) {
-        this.context = context;
-    }
 
     public void setPresenter(Presenter presenter) {
         this.presenter = presenter;
@@ -39,11 +34,9 @@ public class MainHelper {
     public void initialisation() {
         state = GameStates.PROCESS;
 
-        //setFieldProcessor();
         fieldProcessor.setQuantity(16);
         fieldProcessor.createField();
 
-        //setPresenter();
         presenter.createField(fieldProcessor.getValues());
     }
 
