@@ -20,14 +20,12 @@ public class MainHelper {
         this.context = context;
     }
 
-    @Deprecated
-    public void setPresenter() {
-        this.presenter = (Presenter) context.getBean("presenter");
+    public void setPresenter(Presenter presenter) {
+        this.presenter = presenter;
     }
 
-    @Deprecated
-    public void setFieldProcessor() {
-        this.fieldProcessor = (FieldProcessor) context.getBean("fieldProcessor");
+    public void setFieldProcessor(FieldProcessor fieldProcessor) {
+        this.fieldProcessor = fieldProcessor;
     }
 
     public GameStates getState() {
@@ -38,19 +36,14 @@ public class MainHelper {
         this.state = state;
     }
 
-    /*@Autowired
-    MainHelper(ApplicationContext context) {
-        this.context = context; //TODO: Find whats wrong
-    }*/
-
     public void initialisation() {
         state = GameStates.PROCESS;
 
-        setFieldProcessor();
+        //setFieldProcessor();
         fieldProcessor.setQuantity(16);
         fieldProcessor.createField();
 
-        setPresenter();
+        //setPresenter();
         presenter.createField(fieldProcessor.getValues());
     }
 

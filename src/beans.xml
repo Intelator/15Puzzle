@@ -5,9 +5,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="fieldProcessor" class="puzzle.core.FieldProcessorImpl"/>
-    <bean id="presenter" class="puzzle.output.PresenterSwingImpl"/>
-    <bean id="helper" class="org.main.MainHelper"/>//TODO: create links between beans 
+    <bean id="helper" class="org.main.MainHelper">
+        <property name="fieldProcessor">
+            <bean id="fieldProcessor" class="puzzle.core.FieldProcessorImpl"/>
+        </property>
+        <property name="presenter">
+            <bean id="presenter" class="puzzle.output.PresenterSwingImpl"/>
+        </property>
+    </bean>
     <bean id="main" class="org.main.Main"/>
 
 </beans>
