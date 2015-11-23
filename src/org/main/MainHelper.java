@@ -40,4 +40,14 @@ public class MainHelper {
         presenter.createField(fieldProcessor.getValues());
     }
 
+    public void play() {
+        if (fieldProcessor.isFinished()) {
+            state = GameStates.FINISH_WON;
+        } if (!fieldProcessor.hasSolution()) {
+            state = GameStates.FINISH_LOOSE;
+        } else {
+
+        }
+    }
+
 }

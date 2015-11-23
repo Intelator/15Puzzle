@@ -1,5 +1,7 @@
 package puzzle.core;
 
+import org.main.MovementDirections;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,8 +52,50 @@ public class FieldProcessorImpl extends FieldProcessor {
                 i++;
             }
         }
-        log.info("Game over");
+        log.info("Game over, won");
         return true;
+    }
+
+    @Override
+    public boolean hasSolution() {
+        return true; //TODO realize
+    }
+
+    @Override
+    public boolean isMovePossible(MovementDirections direct) {
+        int currentIndex = fields.indexOf(0);
+        int tilesInLine = (int) Math.sqrt(fields.size());
+        boolean isPossible = false;
+        Integer modulo = 0;
+
+        switch (direct) {
+            case UP:
+                if (currentIndex < tilesInLine) {
+                    isPossible = false;
+                } else  isPossible = true;
+                break;
+            case DOWN:
+                if (currentIndex > tilesInLine*(tilesInLine - 1)) {
+                    isPossible = false;
+                } else isPossible = true;
+                break;
+            case LEFT:
+                modulo = currentIndex%tilesInLine;
+                if (modulo.equals(0)) {
+                    isPossible = false;
+                } else isPossible = true;
+                break;
+            case RIGHT:
+                modulo = currentIndex%tilesInLine + 1;
+                if (modulo.equals(0)) {
+                    isPossible = false;
+                } else isPossible = true;
+                break;
+            default:
+                break;
+        }
+
+        return isPossible;
     }
 
     @Override
@@ -60,9 +104,38 @@ public class FieldProcessorImpl extends FieldProcessor {
     }
 
     @Override
-    public void moveTile(int direction) {
+    public void moveTile(MovementDirections direct) {
+        int shift = 0;
+        int tilesInLine = (int) Math.sqrt(fields.size());
+
+        switch (direct) {
+            case UP:
+                if (isMovePossible(direct)) {
+                    shift = -tilesInLine;
+                }
+                break;
+            case DOWN:
+                if (isMovePossible(direct)) {
+                    shift = tilesInLine;
+                }
+                break;
+            case LEFT:
+                if (isMovePossible(direct)) {
+                    shift = -1;
+                }
+                break;
+            case RIGHT:
+                if (isMovePossible(direct)) {
+                    shift = 1;
+                }
+                break;
+            default:
+                log.info("Invalid direction of movement");
+                break;
+        }
+
         int startTileIndex = fields.indexOf(0);
-        int finishTileIndex = startTileIndex + direction;
+        int finishTileIndex = startTileIndex + shift;
         int finishTileValue = fields.get(finishTileIndex);
         fields.set(startTileIndex, finishTileValue);
         fields.set(finishTileIndex, 0);

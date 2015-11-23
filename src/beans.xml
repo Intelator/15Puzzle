@@ -7,10 +7,10 @@
 
     <bean id="helper" class="org.main.MainHelper">
         <property name="fieldProcessor">
-            <bean id="fieldProcessor" class="puzzle.core.FieldProcessorImpl"/>
+            <bean id="fieldProcessor" class="puzzle.core.FieldProcessorImpl" scope="singleton"/>
         </property>
         <property name="presenter">
-            <bean id="presenter" class="puzzle.output.PresenterSwingImpl"/>
+            <bean id="presenter" class="puzzle.output.PresenterSwingImpl" scope="singleton"/>
         </property>
     </bean>
     <bean id="main" class="org.main.Main"/>

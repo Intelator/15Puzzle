@@ -1,5 +1,7 @@
 package puzzle.core;
 
+import org.main.MovementDirections;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.FileHandler;
@@ -31,9 +33,10 @@ public abstract class FieldProcessor {
     }
 
     public abstract void createField();
-    //TODO public boolean hasSolution(List<Integer> fields);
+    public abstract boolean hasSolution();
     public abstract boolean isFinished();
-    public abstract void moveTile(int direction);
+    public abstract boolean isMovePossible(MovementDirections direct);
+    public abstract void moveTile(MovementDirections direct);
     public abstract List<Integer> getValues();
     public abstract void setQuantity(int quantity);
 }
