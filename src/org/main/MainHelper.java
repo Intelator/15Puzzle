@@ -42,7 +42,7 @@ public class MainHelper {
 
     public void play() {
         if (fieldProcessor.isFinished()) {
-            state = GameStates.FINISH_WON;
+            state = GameStates.FINISH_WIN;
         } if (!fieldProcessor.hasSolution()) {
             state = GameStates.FINISH_LOOSE;
         } else {
