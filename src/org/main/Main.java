@@ -14,9 +14,9 @@ public class Main {
         MainHelper helper = (MainHelper) context.getBean("helper");
         helper.initialisation();
 
-        /*while (helper.getState().equals(GameStates.PROCESS)) {
+        while (helper.getState().equals(GameStates.PROCESS)) {
             helper.play();
-        }*/
+        }
 
     }
 }

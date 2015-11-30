@@ -28,7 +28,8 @@ public abstract class Presenter {
         }
     }
 
+    public abstract String getInput();
     public abstract void createField (List fields);
     public abstract void clearField();
-    public abstract void drawField(List<Integer> fields);
+    public abstract void drawField(List fields);
 }

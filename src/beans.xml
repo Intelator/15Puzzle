@@ -12,6 +12,9 @@
         <property name="presenter">
             <bean id="presenter" class="puzzle.output.PresenterSwingImpl" scope="singleton"/>
         </property>
+        <property name="inputManager">
+            <bean id="inputManager" class="puzzle.input.InputManagerSwingImpl" scope="singleton"/>
+        </property>
     </bean>
     <bean id="main" class="org.main.Main"/>
 

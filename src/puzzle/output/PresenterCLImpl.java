@@ -1,7 +1,6 @@
 package puzzle.output;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Created by User on 22.10.2015.
@@ -9,6 +8,10 @@ import java.util.logging.Logger;
 public class PresenterCLImpl extends Presenter {
     public PresenterCLImpl() {
         super();
+    }
+
+    public String getInput() {
+        return "input";
     }
 
     public void createField(List fields) {
@@ -19,7 +22,7 @@ public class PresenterCLImpl extends Presenter {
         //TODO: Find solution
     }
 
-    public void drawField(List<Integer> fields) {
+    public void drawField(List fields) {
         int lengthOfLine = (int) Math.sqrt((double) fields.size());
         int k = 0;
         for (int i = 0; i < lengthOfLine; i++) {

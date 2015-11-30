@@ -1,9 +1,8 @@
 package puzzle.output;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.List;
 
 /**
@@ -14,6 +13,12 @@ public class PresenterSwingImpl extends Presenter {
     Painter painter = null;
     private int frameWidth = 400;
     private int frameHeight = 400;
+
+    private String input = null;
+
+    public String getInput () {
+        return input;
+    }
 
     public PresenterSwingImpl() {
         super();
@@ -31,6 +36,23 @@ public class PresenterSwingImpl extends Presenter {
         frame.add(painter);
         frame.setVisible(true);
 
+        frame.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                input = e.getKeyText(e.getKeyCode());
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+
         drawField(fields);
         log.info("Frame created.");
     }
@@ -41,7 +63,7 @@ public class PresenterSwingImpl extends Presenter {
     }
 
     @Override
-    public void drawField(List<Integer> fields) {
+    public void drawField(List fields) {
         painter.repaint();
     }
 
